@@ -1,8 +1,19 @@
-const mongoose = require('mongoose');
 const express = require('express');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const Band = require('./band');
 const server = express();
-const port = 5550;
+server.use(bodyParser.json());
+server.use(morgan('dev'));
 
-mongoose.connect('mongodb://localhost/someserver');
+// ROUTES
+server.get('/api/bands', (req, res) => {
+  Band.find({}, (err, bands) => {
+    if (err) {
+      res.status(500).json({ error: 'Cannot find your bands' });
+    }
+    res.json(bands);
+  });
+});
 
-module.export = server;
+module.exports = server;

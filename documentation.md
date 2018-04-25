@@ -27,8 +27,8 @@ This is an api for interfacing with a bunch of bands that have nothing to do wit
 | ---- | --------- | --------------------- |
 | DELETE | /api/band/:id | bandId* |
 
-### [EDIT] /band/:id
+### [PUT] /band/:id
 
 | TYPE | URL       | DATA                  |
 | ---- | --------- | --------------------- |
-| EDIT | /band/:id | bandId*, bandName*, bandGenre* |
+| PUT| /band/:id | bandId*, bandName*, bandGenre* |
