@@ -3,5 +3,6 @@ const express = require('express');
 const server = express();
 const port = 5550;
 
-mongoose.connect(server('http://localhost:5550/server')
-);
+mongoose.connect('mongodb://localhost/someserver');
+
+module.export = server;
